@@ -32,5 +32,8 @@ in an interpolating fir filter, a constant added and mixed with the carrier osci
 added together, scaled to not saturate the sdr sink and converted to char byte data format and scaled by 128 and
 saved to an output file for transmission by the fl2k, which actually uses 8196720 and error of 4720 which is ok.
 
-A big of rf gain, a good antenna and receiver complete the setup.
+Transmit the finished multiplex with
+$ fl2k_file -s 8192000 am_xmit_fl2k.dat
+
+A bit of rf gain (minicircuits zhl-32a for 25db), a good antenna (loop) and receiver complete the setup.
 

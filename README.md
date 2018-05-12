@@ -6,7 +6,7 @@ on different AM carrier frequencies for later transmission by an fl2k dongle.
 
 The grc script has the base method for 6 carriers. Adding more graphically would be unweildly so another
 python script has more signal processing blocks added for a total of 32 carriers.   The fl2k does not have
-a whole lot of power to begin with and I thought going beyond 32 would be pushing it too thin. 
+a whole lot of output signal power to begin with and I thought going beyond 32 would be pushing it too thin. 
 
 Another script stop.sh monitors the size of the output and kills the process when it reaches a set limit,
 currently a half hour at 8192k samples per second which is around 15GB.

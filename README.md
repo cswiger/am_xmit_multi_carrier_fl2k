@@ -1,2 +1,35 @@
 # am_xmit_multi_carrier_fl2k
 FL2K AM Multi Carrier Transmitter
+
+gnuradio-companion and extended python script for creating radio data files of multiple audio streams
+on different AM carrier frequencies for later transmission by an fl2k dongle.
+
+The grc script has the base method for 6 carriers. Adding more graphically would be unweildly so another
+python script has more signal processing blocks added for a total of 32 carriers.   The fl2k does not have
+a whole lot of power to begin with and I thought going beyond 32 would be pushing it too thin. 
+
+Another script stop.sh monitors the size of the output and kills the process when it reaches a set limit,
+currently a half hour at 8192k samples per second which is around 15GB.
+
+Creating the 15GB data file takes a few hours depending on your cpu number crunching ability, and a scope and fft
+is displayed during the process to ensure the output stays in limits of +/- 1, which is scaled to 127/-128 
+for the fl2k. 
+
+# Audio files
+The grc script takes a mono single channel 16000 sample per second audio clip. The youtube demo was created with
+the archive.org 1939 Jack Benny show which came in mp3 format and may be converted to the appropriate wav with:
+
+# madplay -o wave:- Jackbenny-390129BennyVsAllenFight.mp3 | sox - -r 16000 Jackbenny-390129BennyVsAllenFight.wav
+
+A couple of the mp3 out of that collection are actually 2 channel and need to be mixed down to play at the right speed:
+
+# madplay -o wave:- Jackbenny-390528AlexanderGrahamBell.mp3 | sox - -r 16000 Jackbenny-390528AlexanderGrahamBell.wav remix 1,2
+
+# Theory
+the 16k sample per second audio as float data is interpolated by 512 to 8192000 samples per second rf rate with gain
+in an interpolating fir filter, a constant added and mixed with the carrier oscillator, then all the channels are
+added together, scaled to not saturate the sdr sink and converted to char byte data format and scaled by 128 and
+saved to an output file for transmission by the fl2k, which actually uses 8196720 and error of 4720 which is ok.
+
+A big of rf gain, a good antenna and receiver complete the setup.
+

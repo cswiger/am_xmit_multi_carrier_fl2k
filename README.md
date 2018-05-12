@@ -19,11 +19,11 @@ for the fl2k.
 The grc script takes a mono single channel 16000 sample per second audio clip. The youtube demo was created with
 the archive.org 1939 Jack Benny show which came in mp3 format and may be converted to the appropriate wav with:
 
-# madplay -o wave:- Jackbenny-390129BennyVsAllenFight.mp3 | sox - -r 16000 Jackbenny-390129BennyVsAllenFight.wav
+$ madplay -o wave:- Jackbenny-390129BennyVsAllenFight.mp3 | sox - -r 16000 Jackbenny-390129BennyVsAllenFight.wav
 
 A couple of the mp3 out of that collection are actually 2 channel and need to be mixed down to play at the right speed:
 
-# madplay -o wave:- Jackbenny-390528AlexanderGrahamBell.mp3 | sox - -r 16000 Jackbenny-390528AlexanderGrahamBell.wav remix 1,2
+$ madplay -o wave:- Jackbenny-390528AlexanderGrahamBell.mp3 | sox - -r 16000 Jackbenny-390528AlexanderGrahamBell.wav remix 1,2
 
 # Theory
 the 16k sample per second audio as float data is interpolated by 512 to 8192000 samples per second rf rate with gain

@@ -33,6 +33,7 @@ added together, scaled to not saturate the sdr sink and converted to char byte d
 saved to an output file for transmission by the fl2k, which actually uses 8196720 and error of 4720 which is ok.
 
 Transmit the finished multiplex with
+
 $ fl2k_file -s 8192000 am_xmit_fl2k.dat
 
 A bit of rf gain (minicircuits zhl-32a for 25db), a good antenna (loop) and receiver complete the setup.

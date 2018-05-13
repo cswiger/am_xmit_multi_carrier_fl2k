@@ -1,0 +1,65 @@
+<block>
+  <name>Am Modulator</name>
+  <key>AM_Modulator</key>
+  <category>Custom</category>
+  <import>from AM_Modulator import AM_Modulator  # grc-generated hier_block</import>
+  <make>AM_Modulator(
+    fgain=$fgain,
+    fir_interp=$fir_interp,
+    carrier_freq=$carrier_freq,
+    rf_sample_rate=$rf_sample_rate,
+    af_sample_rate=$af_sample_rate,
+    filename=$filename,
+)</make>
+  <callback>set_fgain($fgain)</callback>
+  <callback>set_fir_interp($fir_interp)</callback>
+  <callback>set_carrier_freq($carrier_freq)</callback>
+  <callback>set_rf_sample_rate($rf_sample_rate)</callback>
+  <callback>set_af_sample_rate($af_sample_rate)</callback>
+  <callback>set_filename($filename)</callback>
+  <param>
+    <name>Filter Gain</name>
+    <key>fgain</key>
+    <value>128</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Interpolate</name>
+    <key>fir_interp</key>
+    <value>512</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Carrier Frequency of AM </name>
+    <key>carrier_freq</key>
+    <value>530e3</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>RF Sample Rate</name>
+    <key>rf_sample_rate</key>
+    <value>8192000</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Audio Wav Sample Rate</name>
+    <key>af_sample_rate</key>
+    <value>16000</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Source Audio File Name</name>
+    <key>filename</key>
+    <value>pgm1.wav</value>
+    <type>raw</type>
+  </param>
+  <source>
+    <name>out</name>
+    <type>float</type>
+    <vlen>1</vlen>
+  </source>
+  <doc>cswiger
+Am Modulator
+/root/.grc_gnuradio/AM_Modulator.py</doc>
+  <grc_source>/root/am_modulator.grc</grc_source>
+</block>

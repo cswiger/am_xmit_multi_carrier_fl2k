@@ -15,6 +15,11 @@ Creating the 15GB data file takes a few hours depending on your cpu number crunc
 is displayed during the process to ensure the output stays in limits of +/- 1, which is scaled to 127/-128 
 for the fl2k. 
 
+# AM_Modulator
+A hierarchical block to simplify massive audio channel setup in GRC itself without tedious editing of the script.
+Assign each AM_Modulator block a unique wav file source (name needs to be in "quotes.wav") and a carrier frequency. 
+Example graph am_xmit_hier_fl2k.grc .
+
 # Audio files
 The grc script takes mono single channel 16000 sample per second audio clips. The youtube demo was created with
 the archive.org 1939 Jack Benny show which came in mp3 format and may be converted to the appropriate wav with:

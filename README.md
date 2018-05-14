@@ -35,7 +35,7 @@ $ madplay -o wave:- Jackbenny-390528AlexanderGrahamBell.mp3 | sox - -r 16000 Jac
 the 16k sample per second audio as float data is interpolated by 512 to 8192000 samples per second rf rate with gain
 in an interpolating fir filter, a constant added and mixed with the carrier oscillator, then all the channels are
 added together, scaled to not saturate the sdr sink and converted to char byte data format and scaled by 128 and
-saved to an output file for transmission by the fl2k, which actually uses 8196720 and error of 4720 which is ok.
+saved to an output file for transmission by the fl2k, which actually uses 8196720 for an error of 4720 which is ok.
 
 Transmit the finished multiplex with
 
